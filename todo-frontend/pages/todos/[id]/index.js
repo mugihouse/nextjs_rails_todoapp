@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Todo from "@/components/Todo";
 import axios from "axios";
+import DeleteTodoButton from "@/components/DeleteTodoButton";
 
 const TodoDetail = () => {
   const router = useRouter();
@@ -37,7 +38,7 @@ const TodoDetail = () => {
         <div className="flex justify-end">
           <Link
             href={`/todos/${id}/edit`}
-            className="mt-auto font-medium text-blue-600 hover:bg-blue-300 focus:outline-none mr-4"
+            className="mt-auto font-medium text-blue-600 hover:bg-blue-300 focus:outline-none mr-11"
           >
             Edit
           </Link>
@@ -48,6 +49,7 @@ const TodoDetail = () => {
             Back
           </Link>
         </div>
+        <DeleteTodoButton id={todo.id} />
       </div>
     </div>
   );
